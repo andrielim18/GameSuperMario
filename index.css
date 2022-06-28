@@ -1,0 +1,184 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Raleway:wght@100;200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Raleway:wght@100;200&family=Rubik+Moonrocks&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wallpaper{
+    z-index: 3;
+    background-image: url(imagens/wallpaper.jpg);
+    width: 100%;
+    position: absolute;
+}
+.game{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(209, 124, 64),rgb(230, 98, 62)) ;
+    background-size: contain;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#text-start{
+    display: inline-block;
+    background-color: rgb(15, 139, 40);
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 2px 2px  black;
+    font-size: 40px;
+    margin-left: 550px;
+    margin-top: 320px;
+    width: 450px;
+    color:white;
+    border: 1px solid white;
+    font-family: 'Rubik Moonrocks', cursive;
+    position: absolute;
+}
+
+
+
+.gameOver{
+    font-size: 60px;
+    font-family: 'Rubik Moonrocks', cursive;
+    color: red;
+
+    
+}
+
+
+
+.piso{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    top: 91.2%;
+    z-index: 0;
+    background-image: url(./imagens/floor.png);
+    background-repeat: repeat;
+    background-size: cover;
+  
+}
+
+.pipe-game{
+    position: absolute;
+    bottom: 0;
+    width: 80px; 
+    z-index: 1;
+
+}
+ .pipe-animation{
+    animation: pipe-animation 1.5s infinite linear;
+
+ }
+
+.super-mario{
+    width: 150px;
+    position: absolute;
+    left: 10px;
+    bottom: 0;
+    z-index: 1;
+}
+
+.jump-mario{
+    animation: mario-animation 500ms ease-out;
+}
+
+.cloudGame{
+    margin-top: 10px;
+    position: absolute;
+    width: 350px;
+    animation: clouds-animation 30s infinite linear;
+    transition-delay: 1s;
+}
+.cloudGame1{
+    margin-top: 15px;
+    position: absolute;
+    width: 250px;
+    animation: clouds-animation 40s infinite linear;
+    transition-delay: 8s;
+}
+
+.thesun{
+    margin-top: 20px;
+    position: absolute;
+    width: 250px;
+    margin: 0 auto;
+}
+
+.Pontos {
+    background-color: rgb(15, 139, 40);
+    border-radius: 5px; 
+    position: absolute;
+    font-family: 'Rubik Moonrocks', cursive, sans-serif;
+    color:white;
+    border: 2px solid white;
+    top: 30px;
+    right: 10px;
+    width: 180px;
+    font-size: 25px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+@keyframes pipe-animation{
+    from {
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes clouds-animation{
+    
+    from{
+        right: -550px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes mario-animation{
+    0%{
+        bottom: 0;}
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+
+    }
+
+    60%{
+        bottom: 180px;
+
+
+    }
+
+    70%{
+        bottom: 180px;
+
+    }
+
+    100%{
+        bottom: 0;
+
+    }
+
+}
