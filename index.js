@@ -5,6 +5,7 @@ const textStart = document.getElementById('text-start');
 const pontos = document.querySelector(".Pontos");
 const music = document.querySelector(".trilhaSonora");
 const gameOverMusic = document.querySelector(".gameOverMusic");
+const abertura = document.querySelector(".capaAbertura");
 
 /*Contagem de Pontos*/
 const contarPontos = pontos;
@@ -27,6 +28,7 @@ function jump() {
 
 /*Função Start*/
 function start(jump) {
+  abertura.style.display="none";
   pipe.classList.add('pipe-animation');
   mario.src = './imagens/super-mario.gif';
   mario.style.width = '150px';
@@ -55,10 +57,12 @@ const loopGame = setInterval(() => {
     music.volume=0.0;
     gameOverMusic.play();
 
+    abertura.style.display="inline-block";
+   
     textStart.style.display = "inline-block";
-    textStart.style.backgroundColor = "red";
-    textStart.style.fontSize = "50px";
-    document.getElementById("text-start").innerHTML = "GAME OVER";
+    //textStart.style.backgroundColor = "red";
+   // textStart.style.fontSize = "50px";
+   // document.getElementById("text-start").innerHTML = "GAME OVER";
 
 
     clearInterval(contador);
