@@ -7,6 +7,7 @@ const music = document.querySelector(".trilhaSonora");
 const gameOverMusic = document.querySelector(".gameOverMusic");
 const abertura = document.querySelector(".capaAbertura");
 const imgCapa = document.querySelector(".img-capaAbertura");
+const reload = document.querySelector(".btn-reload");
 
 /*Contagem de Pontos*/
 const contarPontos = pontos;
@@ -58,16 +59,22 @@ const loopGame = setInterval(() => {
     music.volume=0.0;
     gameOverMusic.play();
 
-    abertura.style.display="inline-block";
-    imgCapa.src = "./imagens/gameOverVerde.jpg";
+    setInterval(()=>{
+      abertura.style.display="inline-block";
+      imgCapa.src = "./imagens/gameOverVerde.jpg";
+  
+     
+      textStart.style.display = "inline-block";
+      textStart.style.backgroundColor = "rgb(15, 139, 40)";
+      textStart.style.fontSize = "50px";
+      //textStart.classList.add('gameOver');
+      reload.style.display = "flex";
+      document.getElementById("text-start").innerHTML =  `Pontos: ${score}`;
+
+    },3000);
 
    
-    textStart.style.display = "inline-block";
-    textStart.style.backgroundColor = "rgb(15, 139, 40)";
-    textStart.style.fontSize = "50px";
-    //textStart.classList.add('gameOver');
-    document.getElementById("text-start").innerHTML =  `Pontos: ${score}`;
-   
+    
     clearInterval(contador);
     clearInterval(loopGame);
 
@@ -76,6 +83,13 @@ const loopGame = setInterval(() => {
  
 }, 20);
 
+
+
 //cument.location.reload(true);
 document.addEventListener('keydown', start);
 document.addEventListener("keydown", jump);
+
+function reloadPage() {
+  document.location.reload(true);
+};
+
