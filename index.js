@@ -6,6 +6,7 @@ const pontos = document.querySelector(".Pontos");
 const music = document.querySelector(".trilhaSonora");
 const gameOverMusic = document.querySelector(".gameOverMusic");
 const abertura = document.querySelector(".capaAbertura");
+const imgCapa = document.querySelector(".img-capaAbertura");
 
 /*Contagem de Pontos*/
 const contarPontos = pontos;
@@ -58,20 +59,23 @@ const loopGame = setInterval(() => {
     gameOverMusic.play();
 
     abertura.style.display="inline-block";
+    imgCapa.src = "./imagens/gameOverVerde.jpg";
+
    
     textStart.style.display = "inline-block";
-    //textStart.style.backgroundColor = "red";
-   // textStart.style.fontSize = "50px";
-   // document.getElementById("text-start").innerHTML = "GAME OVER";
-
-
+    textStart.style.backgroundColor = "rgb(15, 139, 40)";
+    textStart.style.fontSize = "50px";
+    //textStart.classList.add('gameOver');
+    document.getElementById("text-start").innerHTML =  `Pontos: ${score}`;
+   
     clearInterval(contador);
     clearInterval(loopGame);
 
-  }
 
+  }
+ 
 }, 20);
 
-
+//cument.location.reload(true);
 document.addEventListener('keydown', start);
 document.addEventListener("keydown", jump);
